@@ -1,0 +1,414 @@
+.popup_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black700);
+
+    // opacity: 0;
+    // visibility: hidden;
+    // transform: translate(0, 0);
+    // transition: opacity 0.5s ease, visibility 0.5s ease;
+
+    .comment {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .comment__view__wrap {
+            width: 100%;
+            padding: 1.5vw;
+            border: 1px dashed var(--maincolor);
+            border-radius: 15px;
+            margin-bottom: 1.5vw;
+            height: 50vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: #000;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                height: 30px;
+                background: var(--maincolor_op);
+                border-radius: 50px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: var(--black500);
+            }
+
+            .Comment__view {
+                margin-bottom: 20px;
+
+                &:nth-child(even) {
+
+
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+
+                        .comment_user {}
+
+                        .comment_info {
+                            border-radius: 10px 0 10px 10px;
+
+                        }
+
+                        .editinput {
+
+                            justify-content: space-between;
+
+                        }
+
+                    }
+
+                }
+
+                .text {
+                    color: var(--white200);
+
+                    .comment_user {
+                        display: block;
+                        margin-bottom: 0.5vh;
+                        color: var(--white200);
+
+                        .author {
+                            font-size: 0.9vw;
+                            color: var(--white300);
+                            margin-right: 0.5vw;
+                        }
+
+                        .date {
+                            font-size: 0.9vw;
+                            color: var(--white300);
+                            margin-right: 0.5vw;
+                        }
+
+                        .modify {
+                            color: var(--white200);
+                            font-size: 0.9vw;
+                            color: var(--white300);
+                            margin-right: 0.5vw;
+
+                            &:hover {
+                                color: var(--font-color);
+                                text-decoration: underline;
+                                text-underline-position: under;
+                            }
+                        }
+
+                        .delete {
+                            color: var(--white200);
+                            font-size: 0.9vw;
+                            color: var(--white300);
+                            margin-right: 0.5vw;
+
+                            &:hover {
+                                color: var(--font-color);
+                                text-decoration: underline;
+                                text-underline-position: under;
+                            }
+                        }
+                    }
+
+                    .comment_info {
+                        background-color: #e0e0e0;
+                        padding: 10px;
+                        border-radius: 0px 10px 10px 10px;
+                        display: inline-block;
+                        margin-top: 4px;
+                        color: var(--black);
+                        max-width: 70%;
+                        word-break: break-all;
+                        font-size: 1.1vw;
+                    }
+
+                    .editinput {
+                        width: 72%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        align-content: center;
+
+                        .editText {
+                            width: 70%;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+                            font-size: 1.1vw;
+                        }
+
+                        .edit {
+                            width: 15%;
+                            margin-left: 1vw;
+                            font-size: 1.1vw;
+                            padding-right: 0.2vw;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: var(--font-color);
+                            }
+
+                        }
+
+                        .editdelete {
+                            width: 15%;
+                            font-size: 1.1vw;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: var(--font-color);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modal {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #00000000;
+
+                .modal-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                    background-color: var(--main-bg);
+                    padding: 2vw;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    .close {
+                        width: 100%;
+                        text-align: right;
+                    }
+
+                    h2 {
+                        font-size: 1.2vw;
+                        margin-bottom: 2vw;
+                    }
+
+                    .password_input {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        width: 80%;
+
+                        input {
+                            width: 75%;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+                        }
+
+                        button {
+                            width: 24%;
+                            padding: 0.5vw 1vw;
+                            color: var(--font-color);
+                            font-family: var(--mainEn-font);
+                            text-transform: uppercase;
+                            background-color: #00000000;
+                            font-size: 1vw;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: var(--white200);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .comment__input {
+            border: none;
+            width: 100%;
+
+            fieldset {
+                border: none;
+            }
+
+            .comment__nickname {
+                width: 35%;
+                border-radius: 5px;
+                padding: 5px 10px;
+                margin-right: 1vw;
+            }
+
+            .comment__password {
+                width: 35%;
+                border-radius: 5px;
+                padding: 5px 10px;
+            }
+
+            .comment__detail {
+                margin-top: 10px;
+                width: 80%;
+                border-radius: 5px;
+                padding: 5px 10px;
+            }
+
+            .comment_btn {
+                width: 17%;
+                border-radius: 50px;
+                background-color: var(--font-color);
+                color: var(--black100);
+                padding: 5px 10px;
+                font-size: 1.1vw;
+                font-weight: bold;
+                margin-left: 1vw;
+
+                &:hover {
+                    background-color: var(--white200);
+                    color: var(--font-color);
+                }
+            }
+        }
+    }
+
+    .close_button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.5vw 1vw;
+        color: var(--font-color);
+        font-family: var(--mainEn-font);
+        text-transform: uppercase;
+        background-color: var(--black700);
+        font-size: 2vw;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--white200);
+        }
+    }
+
+}
+
+@media (max-width: 800px) {
+    .popup_wrap {
+        .comment {
+            width: 80%;
+
+            .comment__view__wrap {
+                .Comment__view {
+
+                    &:nth-child(even) {
+                        .text {
+                            .comment_user {}
+
+                            .comment_info {}
+                        }
+                    }
+
+                    .text {
+                        .comment_user {
+                            .author {
+                                font-size: 2vw;
+                            }
+
+                            .date {
+                                font-size: 2vw;
+                            }
+
+                            .modify {
+                                font-size: 2vw;
+                            }
+
+                            .delete {
+                                font-size: 2vw;
+                            }
+                        }
+
+                        .comment_info {
+                            font-size: 2vw;
+                            max-width: 85%;
+                        }
+
+
+                        .editinput {
+
+                            .editText {
+                                font-size: 2.5vw;
+                            }
+
+                            .edit {
+                                font-size: 2.5vw;
+
+                            }
+
+                            .editdelete {
+                                font-size: 2.5vw;
+                            }
+                        }
+
+                    }
+                }
+
+                .modal {
+
+                    .modal-content {
+
+                        .close {}
+
+                        h2 {
+                            font-size: 2.5vw;
+                            margin-bottom: 2vw;
+                        }
+
+                        .password_input {
+                            input {
+                                font-size: 2vw;
+                            }
+
+                            button {
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .comment__input {
+                fieldset {}
+
+                .comment__nickname {
+                    width: 35%;
+                }
+
+                .comment__password {
+                    width: 35%;
+                }
+
+                .comment__detail {}
+
+                .comment_btn {
+                    font-size: 2vw;
+                }
+            }
+        }
+
+        .close_button {
+            font-size: 4vw;
+        }
+
+    }
+}
