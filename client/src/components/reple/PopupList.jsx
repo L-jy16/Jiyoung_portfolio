@@ -1,9 +1,10 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import PopupContent from './PopupContent'
+import axios from 'axios';
+import React, { useEffect, useState, useRef } from 'react';
+import PopupContent from './PopupContent';
 
 const PopupList = () => {
     const [repleList, setRepleList] = useState([]);
+    const commentViewRef = useRef(null);
 
     useEffect(() => {
         const fetchRepleData = async () => {
@@ -21,17 +22,13 @@ const PopupList = () => {
         fetchRepleData();
     }, [repleList]);
 
-
     return (
-        <div className="comment__view__wrap">
-            {repleList.map((reple, idx) => {
-                return (
-                    <PopupContent reple={reple} key={idx} />
-                )
-            })}
-
+        <div className="comment__view__wrap" ref={commentViewRef}>
+            {repleList.map((reple, idx) => (
+                <PopupContent reple={reple} key={idx} />
+            ))}
         </div>
-    )
-}
+    );
+};
 
-export default PopupList
+export default PopupList;
