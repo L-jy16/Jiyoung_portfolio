@@ -19,17 +19,17 @@ const PopupList = () => {
         };
 
         fetchRepleData();
-    }, []);
+    }, [repleList]);
 
 
     return (
         <div className="comment__view__wrap">
             {repleList.map((reple, idx) => {
                 return (
-                    <PopupContent reple={reple} key={idx}/>
+                    <PopupContent reple={reple} key={idx} />
                 )
             })}
-            
+
         </div>
     )
 }

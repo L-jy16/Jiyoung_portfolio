@@ -24,7 +24,9 @@ const PopupWrite = () => {
             .then((response) => {
                 if (response.data.success) {
                     alert("댓글 감사합니다 😊")
-                    window.location.reload();
+                    setReple("")
+                    setNickName("")
+                    setPassword("")
                 } else {
                     alert("댓글이 작성되지 않았습니다.")
                 }

@@ -38,7 +38,7 @@ const PopupContent = (props) => {
             setShowPasswordError(false);
             setRepleInput(true);
             setPassword("");
-            if (!editFlag ){
+            if (!editFlag) {
                 if (window.confirm("정말로 삭제 하시겠습니까?")) {
                     let body = {
                         repleId: props.reple._id,
@@ -49,7 +49,7 @@ const PopupContent = (props) => {
                         .then((response) => {
                             if (response.data.success) {
                                 alert("댓글이 삭제되었습니다.");
-                                window.location.reload();
+                                // window.location.reload();
                             }
                         })
                         .catch((err) => {
@@ -64,7 +64,7 @@ const PopupContent = (props) => {
         }
     };
 
-    const submitHandler = (e) =>{
+    const submitHandler = (e) => {
         let body = {
             repleId: props.reple._id,
             reple: reple,
@@ -78,7 +78,7 @@ const PopupContent = (props) => {
                 } else {
                     alert("댓글 수정이 실패하였습니다.")
                 }
-                return window.location.reload();
+                // return window.location.reload();
             })
     }
 
@@ -91,7 +91,7 @@ const PopupContent = (props) => {
                     <span to="/" className="modify" onClick={() => modifybtn()}>
                         수정
                     </span>
-                    <span to="/" className="delete" onClick={() => {deletebtn()}}>
+                    <span to="/" className="delete" onClick={() => { deletebtn() }}>
                         삭제
                     </span>
                 </div>
@@ -105,7 +105,7 @@ const PopupContent = (props) => {
                         />
                         {/*  수정하기를 누르면 수정하기, 취소하기 버튼 안보이게 숨김 */}
                         <span className='edit' onClick={(e) => { submitHandler(e) }}>수정</span>
-                         <span className='editdelete' onClick={(e) => {
+                        <span className='editdelete' onClick={(e) => {
                             e.preventDefault();
                             setEditFlag(false);
                         }}>취소</span>
