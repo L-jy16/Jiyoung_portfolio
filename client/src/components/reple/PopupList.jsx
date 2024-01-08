@@ -20,7 +20,7 @@ const PopupList = () => {
         };
 
         fetchRepleData();
-    }, [repleList]);
+    }, []);
 
     return (
         <div className="comment__view__wrap" ref={commentViewRef}>

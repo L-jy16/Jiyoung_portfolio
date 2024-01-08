@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PopupList from './PopupList';
 import PopupWrite from './PopupWrite';
+import axios from 'axios';
 
 const Popup = ({ closePopup }) => {
     const closePopupHandler = () => {
